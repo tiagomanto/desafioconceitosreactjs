@@ -4,7 +4,7 @@ import api from './services/api';
 import "./styles.css";
 
 function App() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState([]); //salva no estado
   //dispara uma função assim que o componente é exibido em tela
   useEffect(()=>{
     api.get('repositories').then(response =>{
@@ -16,7 +16,7 @@ function App() {
 
   async function handleAddRepository() {
     const response = await api.post('repositories', {
-      title:'Tiago',
+      title:'Tiago ReactJs',
       url: 'https://github.com/tiagomanto/desafioconceitosreactjs',
       techs: ['Node.js', 'ReactJS']
     })
